@@ -1,0 +1,89 @@
+<html>
+    <header>
+        <style>
+            body {
+                background: rgb(144,144,144);
+                background: -moz-radial-gradient(circle, rgba(144,144,144,1) 0%, rgba(103,105,106,1) 100%);
+                background: -webkit-radial-gradient(circle, rgba(144,144,144,1) 0%, rgba(103,105,106,1) 100%);
+                background: radial-gradient(circle, rgba(144,144,144,1) 0%, rgba(103,105,106,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#909090",endColorstr="#67696a",GradientType=1);
+            }
+
+            #form {
+                background-color: white;
+                max-width: 500px;
+                border-radius: 5px;
+                padding: 24px;
+                box-shadow: 0px 0px 10px #00000080;
+                margin: 0 auto;
+            }
+
+
+            #logo {
+                text-align: center;
+            }
+
+            #logo img {
+                width: 64px;
+                margin: 0 auto;
+            }
+
+            #app-name {
+                text-align: center;
+            }
+
+            #azure-pat-token-container {
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+
+            input {
+                width: 100%;
+                height: 30px;
+                padding: 6px;
+                border: 1px solid #4b4a4a;
+                border-radius: 5px;
+            }
+
+            label {
+                font-weight: 700;
+                font-size: 1rem;
+            }
+
+            button {
+                background: #0c937e;
+                color: white;
+                border: 1px solid #056f5e;
+                padding: 8px;
+                min-width: 70px;
+                cursor: pointer;
+            }
+        </style>
+    </header>
+    <body>
+        <div id="form">
+            <div id="logo">
+                <img src="../icons/icon256.png" />
+            </div>
+            <h1 id="app-name">Azure Magic Task Maker</h1>
+
+            <div id="azure-pat-token-container">
+                <label for="azure-pat-token-container">Azure Access Token</label>
+                <div>
+                    <input id="azure-pat-token" type="text"/>
+                </div>
+                <div style="margin-top: 5px">
+                    You don't know how to get the Azure Access Token? <a href="https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows">Click here to know more</a>.
+                    Make sure to give permission to <b>Work Items -> Read and Write</b>.
+                </div>
+            </div>
+            
+
+            <div style="display: flex; flex-direction: row-reverse;">
+                <button id="save-button">Save</button>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>

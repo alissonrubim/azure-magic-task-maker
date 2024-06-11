@@ -1,0 +1,14 @@
+{
+    "name": "ado-task-maker",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "zip -r ./dist.zip *"
+    },
+    "author": "alisson.rubim",
+    "license": "ISC",
+    "dependencies": {
+        "minify": "^11.1.1"
+    }
+}
