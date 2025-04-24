@@ -74,11 +74,17 @@ function appendCreateTaskButton(accessToken) {
                 .split(" ")[1]
                 .trim();
 
-              const iteration = topModal
-                .querySelector("label[accesskey='r']")
-                .parentNode.parentNode.querySelector(
-                  "input[role='combobox']"
-                ).value;
+              const iterationCombobox = topModal.querySelector(
+                "input[role='combobox']#__bolt-Ite-ration-input"
+              );
+              if (!iterationCombobox) {
+                iterationCombobox = topModal
+                  .querySelector("label[accesskey='r']")
+                  .parentNode.parentNode.querySelector(
+                    "input[role='combobox']"
+                  );
+              }
+              iteration = iterationCombobox.value;
 
               console.info("📍 Modal is a user story!");
 
@@ -94,7 +100,7 @@ function appendCreateTaskButton(accessToken) {
               button.style.cursor = "pointer";
               button.innerHTML = "Create Tasks";
               button.onclick = () => {
-                processTasks(userStoryNumber, topModal, patToken, iteration);
+                processTasks(userStoryNumber, topModal, accessToken, iteration);
               };
               header[0].appendChild(button);
               console.info("📍 Button added to modal!");

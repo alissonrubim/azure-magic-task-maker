@@ -8,12 +8,23 @@ function save() {
 /* Retrieve the Azure PAT token from the chrome storage system */
 async function get() {
   chrome.storage.sync.get("pat_token", function (items) {
-    document.getElementById("azure-pat-token").value = items.pat_token;
+    document.getElementById("azure-pat-token").value = items.pat_token ?? "";
   });
+}
+
+/* Execute when loading the page */
+function load() {
+  get();
+
+  var manifestData = chrome.runtime.getManifest();
+  document.getElementById(
+    "version-label"
+  ).innerHTML = `v${manifestData.version}`;
 }
 
 /* Runtime script */
 document.getElementById("save-button").onclick = () => {
   save();
 };
-get();
+
+load();
